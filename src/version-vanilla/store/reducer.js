@@ -1,3 +1,9 @@
+import {
+  CHANGE_FIRST_COLOR,
+  CHANGE_LAST_COLOR,
+  CHANGE_DIRECTION,
+} from '../actions/gradient';
+
 const initialState = {
   firstColor: 'yellow',
   lastColor: '#f0f',
@@ -10,13 +16,13 @@ const reducer = (state = initialState, action = {}) => {
 
   // on indique le traitement à appliquer selon le type de l'action
   switch (action.type) {
-    case 'CHANGE_DIRECTION':
+    case CHANGE_DIRECTION:
       return {
         ...state,
         direction: action.direction,
       };
 
-    case 'CHANGE_FIRST_COLOR':
+    case CHANGE_FIRST_COLOR:
       return {
         // copie des infos du state actuel
         ...state,
@@ -28,7 +34,7 @@ const reducer = (state = initialState, action = {}) => {
         nbColors: state.nbColors + 1, // on augmente de 1
       };
 
-    case 'CHANGE_LAST_COLOR':
+    case CHANGE_LAST_COLOR:
       return {
         ...state,
         lastColor: action.color,

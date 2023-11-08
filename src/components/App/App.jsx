@@ -1,26 +1,24 @@
-import logo from '../../assets/logo.svg';
-
+import ColorButtons from '../ColorButtons/ColorButtons';
+import Counter from '../Counter/Counter';
+import Gradient from '../Gradient/Gradient';
+import DirectionButtons from '../DirectionButtons/DirectionButtons';
 import './App.scss';
+
+/* Plan d'action pour avoir un générateur de dégradé en React :
+- intégration statique et mise en place des composants (on garde le SCSS qu'on
+avait dans la version vanilla) => pas de traitement sur les boutons
+- dynamisation avec les interactions utilisateur (clic sur les boutons) => il
+nous faudra un state parce que les couleurs et direction changent au fil du
+temps (mise en place d'un store Redux et utilisation avec les composants React)
+*/
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <p>
-          Edit <code>src/components/App/App.jsx</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://react.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter />
+      <ColorButtons />
+      <Gradient />
+      <DirectionButtons />
     </div>
   );
 }
